@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      JavaScript 7th Edition
+      Chapter 1
+      Hands-on Project 1-2
+
+      Author: Bella Bustos
+      Date:   9/7/2025
+
+      Filename: project01-02.html
+   -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hands-on Project 1-2</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #b96d22;
+        }
+        .header {
+            background: #1187a3;
+            color: white;
+            font-size: 2em;
+            padding: 30px 0 10px 0;
+            text-align: center;
+            box-shadow: 0 3px 10px #444;
+        }
+        .container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #edb972;
+            box-shadow: 0 2px 5px #999;
+        }
+        th, td {
+            border: 1px solid #835c12;
+            padding: 8px 30px;
+            font-size: 1em;
+            text-align: left;
+        }
+        th {
+            background: #f7c782;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Hands-on Project 1-2</div>
+    <div class="container">
+        <div class="title">High-Speed Internet Plans</div>
+        <div id="tableHere"></div>
+    </div>
+    <script>
+        // Data for table
+        const plans = [
+            {service: "Basic", speed: "50 Mbps"},
+            {service: "Express", speed: "100 Mbps"},
+            {service: "Extreme", speed: "500 Mbps"},
+            {service: "Ultimate", speed: "1 Gig"},
+        ];
+
+        // Create table
+        function createTable() {
+            let html = '<table>';
+            html += '<tr><th>Service</th><th>Download Speed</th></tr>';
+            plans.forEach(row => {
+                html += `<tr><td>${row.service}</td><td>${row.speed}</td></tr>`;
+            });
+            html += '</table>';
+            document.getElementById('tableHere').innerHTML = html;
+        }
+        createTable();
+    </script>
+</body>
+</html>
