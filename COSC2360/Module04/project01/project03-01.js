@@ -4,38 +4,35 @@
 
       Application to calculate total order cost
       Author: Bella Bustos
-      Date:   9/14/2025
+      Date: 9/14/2025
 
       Filename: project03-01.js
 */
 
+// Function to display a numeric value as a text string in the format $##.##
+function formatCurrency(value) {
+    return "$" + value.toFixed(2);
+}
 
 // Get all menu item checkboxes
 let menuItems = document.getElementsByClassName("menuItem");
 
-// Add event listeners to each checkbox
+// Add event listener to each menu item checkbox
 for (let i = 0; i < menuItems.length; i++) {
-   menuItems[i].addEventListener("change", calcTotal); // "change" event is better than "click"
+    menuItems[i].addEventListener("click", calcTotal);
 }
 
-// Function to calculate total cost
+// Function to calculate the total cost
 function calcTotal() {
-   console.log("calcTotal is running...");
-   let orderTotal = 0;
+    let orderTotal = 0;
 
-   // Loop through all menu items
-   for (let i = 0; i < menuItems.length; i++) {
-      if (menuItems[i].checked) {
-         console.log("Adding item: " + menuItems[i].value);
-         orderTotal += Number(menuItems[i].value);
-      }
-   }
+    for (let i = 0; i < menuItems.length; i++) {
+        if (menuItems[i].checked) {
+            orderTotal += Number(menuItems[i].value);
+        }
+    }
 
-   // Update the total in the page
-   document.getElementById("billTotal").textContent = formatCurrency(orderTotal);
+    // Update the total in the page
+    document.getElementById("billTotal").innerHTML = formatCurrency(orderTotal);
 }
 
-// Function to display a numeric value as a text string in the format $##.##
-function formatCurrency(value) {
-   return "$" + value.toFixed(2);
-}

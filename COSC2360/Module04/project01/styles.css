@@ -1,8 +1,6 @@
 /*  JavaScript 7th Edition
     Chapter 3
     Hands-on Project 3-1
-
-    Filename: styles.css
 */
 
 /* apply a natural box layout model to all elements */
@@ -54,7 +52,7 @@ ol, ul {
 
 /* page header */
 header {
-   background: #5472B2;
+   background: #5472B2; /* blue header */
    width: 100%;
    color: #FFFFFF;
    font-size: 48px;
@@ -67,7 +65,7 @@ article {
    width: 960px;
    height: 250px;
    text-align: left;
-   background: #FFDB70;
+   background: #FFDB70; /* orange article background */
    position: relative;
 }
 
